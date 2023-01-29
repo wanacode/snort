@@ -14,10 +14,11 @@ export interface ProfileImageProps {
     subHeader?: JSX.Element,
     showUsername?: boolean,
     className?: string,
-    link?: string
+    link?: string,
+    isUser?: string
 };
 
-export default function ProfileImage({ pubkey, subHeader, showUsername = true, className, link }: ProfileImageProps) {
+export default function ProfileImage({ pubkey, subHeader, showUsername = true, className, link, isUser }: ProfileImageProps) {
     const navigate = useNavigate();
     const user = useUserProfile(pubkey);
 
@@ -28,6 +29,8 @@ export default function ProfileImage({ pubkey, subHeader, showUsername = true, c
     return (
         <div className={`pfp${className ? ` ${className}` : ""}`}>
             <div className="avatar-wrapper">
+                {isUser == "me" && <>{console.log("USER", user)}</>}
+                
                 <Avatar user={user} onClick={() => navigate(link ?? profileLink(pubkey))} />
             </div>
             {showUsername && (<div className="f-grow pointer" onClick={e => { e.stopPropagation(); navigate(link ?? profileLink(pubkey)) }}>

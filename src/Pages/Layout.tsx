@@ -104,7 +104,7 @@ export default function Layout() {
                 {unreadNotifications > 0 && (<span className="unread-count">
                     {unreadNotifications > 100 ? ">99" : unreadNotifications}
                 </span>)}
-                <ProfileImage pubkey={key || ""} showUsername={false} />
+                <ProfileImage pubkey={key || ""} showUsername={false} isUser="me" />
             </>
         )
     }

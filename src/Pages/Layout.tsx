@@ -119,12 +119,7 @@ export default function Layout() {
     return (
         <div className="page">
             <header>
-                <div className="logo" onClick={() => navigate("/")}>Snort</div>
-                <div>
-                    {key ? accountHeader() :
-                        <button type="button" onClick={() => navigate("/login")}>Login</button>
-                    }
-                </div>
+                <div className="logo" onClick={() => navigate("/")}>Feed</div>
             </header>
 
             <Outlet />

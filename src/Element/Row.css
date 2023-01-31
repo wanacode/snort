@@ -1,0 +1,228 @@
+/* .note {
+  min-height: 110px;
+} */
+
+.row-grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 120px 1fr 50px 140px;
+  column-gap: 16px;
+  width: 100%;
+}
+
+/* .col1 {
+  width: 180px;
+} */
+
+.note.card {
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1px;
+  min-height: unset;
+}
+
+.note.thread {
+  border-bottom: none;
+}
+
+.note>.header .reply {
+  font-size: var(--font-size-tiny);
+  color: var(--font-secondary-color);
+}
+
+.note>.header .reply a {
+  color: var(--highlight);
+}
+
+.note>.header .reply a:hover {
+  text-decoration-color: var(--highlight);
+}
+
+.note>.header>.info {
+  font-size: var(--font-size);
+  white-space: nowrap;
+  color: var(--font-secondary-color);
+}
+
+.body {
+  height: 24px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note .footer .footer-reactions {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+@media (min-width: 720px) {
+  .note .footer .footer-reactions {
+    margin-left: 0;
+  }
+}
+
+.note>.footer .ctx-menu {
+  background-color: var(--note-bg);
+  color: var(--font-secondary-color);
+  border: 1px solid var(--font-secondary-color);
+  border-radius: 16px;
+  min-width: 0;
+}
+
+.note>.footer .ctx-menu li {
+  display: grid;
+  grid-template-columns: 2rem auto;
+}
+
+.ctx-menu .red {
+  color: var(--error);
+}
+
+.note>.header img:hover, .note>.header .name>.reply:hover, .note .body:hover {
+  cursor: pointer;
+}
+
+.note>.note-creator {
+  margin-top: 12px;
+  margin-left: 56px;
+}
+
+.thread.note {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.thread.note, .indented .note {
+  margin-bottom: 0;
+}
+
+.indented .note {
+  border-radius: 0;
+}
+
+.indented {
+  border-left: 3px solid var(--gray-tertiary);
+  padding-left: 2px;
+}
+
+.note:last-child {
+  border-bottom-right-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.indented .note.active:last-child {
+  border-bottom-right-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.indented>.indented .note:last-child {
+  border-bottom-right-radius: 0px;
+  margin-bottom: 0;
+}
+
+.indented .active {
+  background-color: var(--gray-tertiary);
+  margin-left: -5px;
+  border-left: 3px solid var(--highlight);
+  border-radius: 0;
+}
+
+.reaction-pill {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px;
+  user-select: none;
+  color: var(--font-secondary-color);
+  font-feature-settings: "tnum";
+}
+
+.reaction-pill .reaction-pill-number {
+  margin-left: 8px;
+}
+
+.reaction-pill.reacted {
+  color: var(--highlight);
+}
+
+.reaction-pill:hover {
+  cursor: pointer;
+}
+
+.trash-icon {
+  color: var(--error);
+  margin-right: auto;
+}
+
+.note.active>.header .reply {
+  color: var(--font-tertiary-color);
+}
+
+.note.active>.header>.info {
+  color: var(--font-tertiary-color);
+  font-weight: 500;
+}
+
+.note.active>.footer>.reaction-pill {
+  color: var(--font-tertiary-color);
+}
+
+.note.active>.footer>.reaction-pill.reacted {
+  color: var(--highlight);
+}
+
+
+.light .indented .active {
+  background-color: var(--gray-secondary);
+}
+
+.light .note.active>.header .reply {
+  color: var(--font-secondary-color);
+}
+
+.light .note.active>.header>.info {
+  color: var(--font-secondary-color);
+}
+
+.light .note.active>.footer>.reaction-pill {
+  color: var(--note-bg);
+}
+
+.light .note.active>.footer>.reaction-pill.reacted {
+  color: var(--highlight);
+}
+.note-expand .body {
+  max-height: 300px;
+  overflow-y: hidden;
+  mask-image: linear-gradient(to bottom, var(--note-bg) 60%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to bottom, var(--note-bg) 60%, rgba(0,0,0,0));
+}
+
+.hidden-note .header {
+  display: flex;
+  align-items: center;
+}
+
+.card.note.hidden-note {
+  min-height: unset;
+}
+
+.hidden-note button {
+   max-height: 30px;
+}
+
+.show-more {
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: var(--highlight);
+}
+
+.show-more:hover {
+  background: none;
+  color: var(--highlight);
+}

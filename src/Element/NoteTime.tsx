@@ -14,6 +14,10 @@ export default function NoteTime(props: NoteTimeProps) {
     const { from, fallback } = props;
     const absoluteTime = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'long'}).format(from);
     const isoDate = new Date(from).toISOString();
+    const showTime = new Intl.DateTimeFormat(undefined, {
+        hour: 'numeric',
+        minute: 'numeric'
+      }).format(from);
 
     function calcTime() {
         let fromDate = new Date(from);
@@ -48,5 +52,5 @@ export default function NoteTime(props: NoteTimeProps) {
         return () => clearInterval(t);
     }, [from]);
 
-    return <time dateTime={isoDate} title={absoluteTime}>{time}</time>
+    return <time dateTime={isoDate} title={absoluteTime}>{showTime}</time>
 }

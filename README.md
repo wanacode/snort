@@ -1,3 +1,14 @@
+## Directory
+
+This branch shows a more compact feed. Just a one liner, a la Gmail.
+
+To implement Face pile. 
+Reposts not showing a number.
+Filter to only show posts with 1 or more likes.
+
+Root.tsx can be changed to show Global or Following Posts.
+
+
 ## Snort
 
 Snort is a nostr UI built with React, Snort intends to be fast and effecient
@@ -29,3 +40,4 @@ Snort supports the following NIP's:
 - [ ] NIP-42: Authentication of clients to relays
 - [x] NIP-50: Search
 - [x] NIP-51: Lists
+
